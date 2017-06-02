@@ -1,0 +1,23 @@
+             PGM
+
+             DCL        VAR(&XMLFile) TYPE(*CHAR) LEN(30) +
+                          Value('/temp/wxmltest.xml')
+
+
+  /* ----------------------------------------------------------------------- */
+
+             clrpfm     wxml
+
+             call       TESTXML
+
+             CPYTOIMPF  FROMFILE(STSDBF/WXML) TOSTMF(&XMLFILE) +
+                          MBROPT(*REPLACE) STMFCCSID(*PCASCII) +
+                          RCDDLM(*CRLF) DTAFmT(*FIXED) STRDLM(*NONE) +
+                          FLDDLM(*TAB)
+
+             SNDM       FROM(SYSOP@SCHILLI.COM) TO(LWILKINSON@SCHILLI.COM) +
+                          FILE(TEXT) SUBJECT('xml experiment') +
+                          ATTACHMENT(&xmlfile)
+
+             ENDPGM
+
