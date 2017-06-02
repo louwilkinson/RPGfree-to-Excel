@@ -1,0 +1,49 @@
+There are three pieces to a service program
+
+1)  The procedures themselves in the appropriate source member in this
+    source file: STSSRC/Service.  (Example: STSSRC/Service,Dates)
+
+2)  The procedure headers or prototypes in
+    the same member name with an Hprefix.
+    (Example: STSSRC/Service, HDates)
+
+3)  The binding directives in
+    the same member name with an Bprefix.
+    (Example: STSSRC/Service, BDates)
+
+To add a new procedure -> ALWAYS ADD TO THE BOTTOM OF THE LIST!!!
+
+1)  Put the procedure header in the header source member
+2)  Put the procedure in the procedure source member
+3)  Add the binding directives in the binder source member
+4)  CRTRPGMOD from the procedure source member
+      NOTE:  if the procedure source member is an SQLRPGLE type,
+             use CRTSQLRPGI OBJTYPE(*MODULE)
+5)  CRTSRVPGM from the procedure source member.  Remember to use
+    EXPORT(*SRCFILE) SRCFILE(STSSRC/Service) SRCMBR(Bxxxxxx)
+     where Bxxxxxx is the binder member name.
+
+NOTE:  if changing (adding) to the binder source member, be sure to
+       code what WAS there as *CURRENT and *PRV and to make a new
+       *CURRENT section that includes the procedure you're adding.
+
+NOTE:  don't forget to put EXPORT on the procedure...duh...
+
+NOTE:  ALWAYS write the test programs first.
+       put the service programs in, and have them return nothing,
+       then compile and create the service programs.
+       that way they're functional, but don't return any data
+
+NOTE:  For a brand new service program:
+       if you want people to be able to take advantage of the service
+       program without having to explicitly add it to the compile, it must
+       be added to the binding directory in STSOBJ.  The binding directory
+       is SERVICE and xxxx is your service program name.
+                ADDBNDDIRE BNDDIR(STSOBJ/SERVICE) OBJ((xxxx))
+       Validate that it's in, by:
+                DSPBNDDIR BNDDIR(STSOBJ/SERVICE)
+       Now, to take advantage of your new service program (or any service
+       program, without having to mess with it during compile, the H spec
+               H  BNDDIR ('STSOBJ/SERVICE')
+       is simply put at the top of the program source code
+                                 
