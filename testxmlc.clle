@@ -15,7 +15,7 @@
                           RCDDLM(*CRLF) DTAFmT(*FIXED) STRDLM(*NONE) +
                           FLDDLM(*TAB)
 
-             SNDM       FROM(SYSOP@SCHILLI.COM) TO(LWILKINSON@SCHILLI.COM) +
+             SNDM       FROM(SYSOP@SCHILLI.COM) TO(LouWilkinson1@gmail.com) +
                           FILE(TEXT) SUBJECT('xml experiment') +
                           ATTACHMENT(&xmlfile)
 
