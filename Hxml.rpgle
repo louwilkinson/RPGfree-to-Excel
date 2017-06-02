@@ -1,5 +1,5 @@
 
-      *  procedure prototypes
+      *  procedure prototypes 
 
       *-------------------------------------------------------
        Dcl-PR #StartWorkBook  ind;
