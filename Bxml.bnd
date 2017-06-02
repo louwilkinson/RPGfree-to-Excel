@@ -1,0 +1,11 @@
+             STRPGMEXP  PGMLVL(*CURRENT)
+                EXPORT     SYMBOL(#StartWorkBook)
+                EXPORT     SYMBOL(#EndWorkBook)
+                EXPORT     SYMBOL(#StartSheet)
+                EXPORT     SYMBOL(#EndSheet)
+                EXPORT     SYMBOL(#SetColWidths)
+                EXPORT     SYMBOL(#StartRow)
+                EXPORT     SYMBOL(#EndRow)
+                EXPORT     SYMBOL(#WriteCell)
+             ENDPGMEXP
+         
