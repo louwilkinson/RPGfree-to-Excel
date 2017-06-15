@@ -1,0 +1,26 @@
+
+  Types and Styles for the XML service program
+
+  type:
+       S or s -> string
+       N or n -> number
+
+  styles: in general H* = header, D* = detail, M* = money
+
+   (H generally for column headers)
+   H1: calibri, 14pt, black text on light gray background
+   H2: calibri, 14pt, black text on light gray background, right justified
+
+   (D generally for numbers)
+   D1: calibri, 12pt, black
+   D2: calibri, 12pt, black, right justified.
+
+   (M generally for money, honey)
+   M1: calibri, 14pt, 2decimals, black
+   M2: calibri, 14pt, 2decimals, black, green background
+   M3: calibri, 14pt, 2decimals, black, light yellow background
+   M4: calibri, 14pt, 2decimals, black, bright yellow background
+   M5: calibri, 14pt, 2decimals, black, orange background
+   M6: calibri, 14pt, 2decimals, black, red background
+
+                                                    
