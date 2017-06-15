@@ -38,9 +38,10 @@ so...what do we have and what do you need?
     
     W02440.pf - the pf/table with the data
     
- lastly...you might wonder why we bother creating the summary file in the middle instead of just going directly to the xml...its because we use the summary file in other places...google charts of the data on our intranet, etc.  good question, though...
     R02441.rpgle - the program that reads w02440 and writes to wxml
     
     C02440.clle - clears the files, calls r02441, sends the wxml file to the user.
-
+    
+ lastly...you might wonder why we bother creating the summary file in the middle instead of just going directly to the xml...its because we use the summary file in other places...google charts of the data on our intranet, etc.  good question, though...
+   
 
