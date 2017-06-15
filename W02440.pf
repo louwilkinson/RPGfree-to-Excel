@@ -1,0 +1,29 @@
+      *******************************************************************
+      * Schilli Transportation Services                             *
+      *  PF Name     : W02440                                         *
+      *  Description : WORKFILE FOR ATB Spreadsheet / Chart programs
+      *  Date Created: 1 May 2017                            *
+      *  Created by  : LW                                             *
+      *                                                               *
+      *  Modifications                                                *
+      *  -------------                                                *
+      *    Date      By   Prj#  Description                           *
+      *  ----------------------------------------------------------   *
+      *  xx/xx/xxxx  xxx  xxxx  x.........                            *
+      *******************************************************************
+     A*
+     A          R F02W1
+     A*
+     A            W1CPY     R               REFFLD(CMPY F00REFC)
+     A            W1SLSM    R               REFFLD(SLSM F00REFS)
+     A            W1CUST    R               REFFLD(BCST F00REFB)
+     A            W1CURD         9S 2
+     A            W1OV00         9S 2
+     A            W1OV30         9S 2
+     A            W1OV60         9S 2
+     A            W1OV90         9S 2
+     A*
+     A          K W1CPY
+     A          K W1SLSM
+     A          K W1CUST
+     A*                                     
