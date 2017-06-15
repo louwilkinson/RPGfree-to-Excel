@@ -1,0 +1,37 @@
+             PGM
+
+             DCL        VAR(&XMLFile) TYPE(*CHAR) LEN(30) +
+                          Value('/temp/ATBspreadsheet.xml')
+
+             dcl        &date *char 6
+             dcl        &printdate *char 10
+
+             RTVJOBA    DATE(&DATE)
+             CVTDAT     DATE(&DATE) TOVAR(&PRINTDATE) FROMFMT(*JOB) +
+                          TOFMT(*YYMD) TOSEP('/')
+
+  /* --- first for salesmen ------------------------------------------------ */
+
+             clrpfm     wxml
+             clrpfm     w02440
+
+             /*  create summary workfile W02440 */
+
+             call       r02440    
+
+             /*  create xml file from W02440 */
+
+             call       r02441
+
+             CPYTOIMPF  FROMFILE(STSDBF/WXML) TOSTMF(&XMLFILE) +
+                          MBROPT(*REPLACE) STMFCCSID(*PCASCII) +
+                          RCDDLM(*CRLF) DTAFmT(*FIXED) STRDLM(*NONE) +
+                          FLDDLM(*TAB)
+
+             SNDM       FROM(SYSOP@SCHILLI.COM) TO(LWILKINSON1@Gmail.com) +
+                          FILE(TEXT) SUBJECT('Salesman ATB ' *cat +
+                          &printdate) ATTACHMENT(&xmlfile)
+
+             ENDPGM
+
+          
